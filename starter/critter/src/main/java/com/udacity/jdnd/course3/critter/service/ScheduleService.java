@@ -25,7 +25,7 @@ public class ScheduleService {
         return scheduleRepository.findAll();
     }
 
-    public List<Schedule> getSchedulesByPet(Pet pet) {
+    public List<Schedule> getSchedulesForPet(Pet pet) {
         return scheduleRepository.findSchedulesByPets(pet);
     }
 

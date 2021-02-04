@@ -21,7 +21,7 @@ public class EmployeeService {
         @Autowired
         private EmployeeRepository employeeRepository;
 
-        public Employee saveEmployee(Employee employee) {
+        public Employee postEmployee(Employee employee) {
             return employeeRepository.save(employee);
         }
 
