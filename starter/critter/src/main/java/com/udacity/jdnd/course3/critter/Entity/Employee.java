@@ -19,11 +19,10 @@ public class Employee {
 
     private String name;
 
-    @ElementCollection(targetClass = EmployeeSkill.class)
-    @Enumerated(EnumType.STRING)
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<EmployeeSkill> skills;
 
-    @ElementCollection(targetClass = DayOfWeek.class)
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<DayOfWeek> daysAvailable;
 
     public Long getId() {
