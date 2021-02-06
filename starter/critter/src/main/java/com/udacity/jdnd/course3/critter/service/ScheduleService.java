@@ -33,11 +33,11 @@ public class ScheduleService {
     }
 
     public List<Schedule> getScheduleForPet(Long petId) {
-        return scheduleRepository.findAllPetsById(petId);
+        return scheduleRepository.findAllByPets_Id(petId);
     }
 
-    public List<Schedule> getScheduleForEmployees(Long employeeId) {
-        return scheduleRepository.findScheduleByEmployees(employeeId);
+    public List<Schedule> getScheduleForEmployee(Long employeeId) {
+        return scheduleRepository.findAllByEmployees_Id(employeeId);
     }
 
     public List<Schedule> getScheduleForCustomer(Long customerId) {
@@ -49,7 +49,7 @@ public class ScheduleService {
             List<Schedule> scheduleList = new ArrayList<>();
 
             for (Pet pet : petList) {
-                scheduleList.addAll(scheduleRepository.findAllPetsById(pet.getId()));
+                scheduleList.addAll(scheduleRepository.findAllByPets_Id(pet.getId()));
             }
             return scheduleList;
         } else {

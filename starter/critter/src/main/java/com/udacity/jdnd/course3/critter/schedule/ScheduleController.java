@@ -71,8 +71,7 @@ public class ScheduleController {
     @GetMapping("/employee/{employeeId}")
     public List<ScheduleDTO> getScheduleForEmployee(@PathVariable long employeeId) {
        //Get Schedule for Employees
-
-        List<Schedule> scheduleList = scheduleService.getScheduleForEmployees(employeeId);
+        List<Schedule> scheduleList = scheduleService.getScheduleForEmployee(employeeId);
         List<ScheduleDTO> scheduleDTOList = new ArrayList<>();
 
         for (Schedule schedule : scheduleList) {
