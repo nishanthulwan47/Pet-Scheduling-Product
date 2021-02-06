@@ -101,6 +101,8 @@ public class ScheduleController {
 
         BeanUtils.copyProperties(scheduleDTO, schedule);
 
+        schedule.setEmployeeSkills(scheduleDTO.getActivities());
+
         List<Long> petIds = scheduleDTO.getPetIds();
         if (petIds != null) {
             List<Pet> pets = new ArrayList<Pet>();
@@ -126,6 +128,8 @@ public class ScheduleController {
         ScheduleDTO scheduleDTO = new ScheduleDTO();
 
         BeanUtils.copyProperties(schedule, scheduleDTO);
+
+        scheduleDTO.setActivities(schedule.getEmployeeSkills());
 
         List<Pet> pets = schedule.getPets();
         if (pets != null) {
