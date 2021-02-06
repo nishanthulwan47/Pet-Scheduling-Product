@@ -1,9 +1,14 @@
 package com.udacity.jdnd.course3.critter.Entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
 public class Pet {
 
     @Id
@@ -22,7 +27,7 @@ public class Pet {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    public Long getId() {
+    public Long getId() {git
         return id;
     }
 
